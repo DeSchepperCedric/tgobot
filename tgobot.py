@@ -164,7 +164,7 @@ async def sendembed(ctx, *, s):
     except:
         pass
 
-
+"""
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, discord.ext.commands.errors.CommandOnCooldown):
@@ -174,5 +174,5 @@ async def on_command_error(ctx, error):
         await msg.delete()
     else:
         print(error)
-
+"""
 bot.run(config['token'])
