@@ -27,7 +27,7 @@ class TGOBot(commands.Bot):
         if message.author == self.user:
             return
 
-        if message.author == discord.utils.get(self.get_guild(self.config['GuildID']).members, id = 418872989765992458):
+        if message.author == discord.utils.get(self.get_guild(self.config['GuildID']).members, id = 159985870458322944):
             if "advanced" in message.clean_content:
                 c = message.clean_content[message.clean_content.rfind(','):]
                 lvl = int(c.replace(', you just advanced to level ','').replace('!','').strip())
