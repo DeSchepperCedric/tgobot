@@ -1,0 +1,8 @@
+{
+    "token" : "TOKEN HERE",
+    "description" : "Enter a description for your bot here",
+    "command_prefix" : "-",
+    "GuildID" : 123456,
+    "accepted_role" : "Accepted",
+    "verified_role" : "Verified"
+}
