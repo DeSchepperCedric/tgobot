@@ -13,7 +13,8 @@ from tgomenus import *
 
 class TGOBot(commands.Bot):
     def __init__(self, config):
-        intents = discord.Intents(messages=True, guilds=True, members=True)
+        intents = discord.Intents.default()
+        intents.members = True
         super().__init__(config['command_prefix'], help_command=None, description=config['description'], intents=intents)
         self.config = config
     
@@ -27,7 +28,7 @@ class TGOBot(commands.Bot):
         if message.author == self.user:
             return
 
-        if message.author == discord.utils.get(self.get_guild(self.config['GuildID']).members, id = 159985870458322944):
+        if message.author == discord.utils.get(self.get_guild(self.config['GuildID']).members, id = 418872989765992458):
             if "advanced" in message.clean_content:
                 c = message.clean_content[message.clean_content.rfind(','):]
                 lvl = int(c.replace(', you just advanced to level ','').replace('!','').strip())
@@ -80,7 +81,7 @@ async def staff(ctx):
         pass
 
 
-@bot.command(aliases = [])
+@bot.command(aliases = ['exp'])
 @commands.cooldown(1, 600, commands.BucketType.user)   
 async def expert(ctx):
     m = ExpertMenu(ctx)
@@ -95,7 +96,7 @@ async def menu(ctx):
     m = TGOMenu(ctx)
     await m.start(ctx)
 
-@bot.command()
+@bot.command(aliases = ['role', 'rolemenu'])
 async def roles(ctx):
     m = RoleMenu(ctx)
     try:
@@ -104,7 +105,7 @@ async def roles(ctx):
         pass
     await m.start(ctx)
 
-@bot.command()
+@bot.command(aliases = ['mt'])
 @commands.has_role("Staff")
 async def mute(ctx, member: discord.Member, time):
     seconds = int(pytimeparse.parse(time))
@@ -154,7 +155,7 @@ async def _purge(ctx, num : int):
     else:
         await ctx.message.channel.purge(limit=num)
     
-@bot.command()
+@bot.command(aliases = ['embed', 'em'])
 @commands.has_role("Staff")
 async def sendembed(ctx, *, s):
     em = discord.Embed.from_dict(json.loads(s))
@@ -164,7 +165,7 @@ async def sendembed(ctx, *, s):
     except:
         pass
 
-"""
+
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, discord.ext.commands.errors.CommandOnCooldown):
@@ -174,5 +175,6 @@ async def on_command_error(ctx, error):
         await msg.delete()
     else:
         print(error)
-"""
+
 bot.run(config['token'])
+
