@@ -3,7 +3,7 @@
 Discord bot for The Great Outdoors server.
 Join here: https://discord.gg/ErtS8y4
 
-# Features
+## Features
 - Advanced two-stage user verification system
 - Ping staff members with cooldown
 - Ping different helper/expert groups with cooldown
@@ -16,7 +16,7 @@ Join here: https://discord.gg/ErtS8y4
 - Automate reward roles for Mee6 levels (without Mee6 Premium!)
 - Control the bot's status message
 
-# Changing presence
+## Changing presence
 
 Edit this line:
 ```py
