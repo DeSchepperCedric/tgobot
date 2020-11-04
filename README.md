@@ -1,6 +1,20 @@
 # tgobot
 
-Bot for TGO discord.
+Discord bot for The Great Outdoors server.
+Join our server: https://discord.gg/ErtS8y4
+
+# Features
+-Advanced two-stage user verification system
+-Ping staff members with cooldown
+-Ping different helper/expert groups with cooldown
+-Self-assign roles
+-Request or apply for restricted roles
+-Main embed menu for users to access commands graphically
+-Snippets: create rich embeds and access them quickly with a custom command (examples: -faq, -rule3)
+-Sendembed: quickly send custom embeds by pasting the JSON into chat
+-Mute command with searchable log message sent to the desired channel
+-Automate reward roles for Mee6 levels (without Mee6 Premium!)
+-Control the bot's status message
 
 # Changing presence
 
